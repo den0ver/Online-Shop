@@ -26,7 +26,11 @@
             <div class="product-detail__top">
                 <p class="product-detail__price">${{ product.price }}</p>
             </div>
-            
+            <form action="{% url 'cart:add' product.id %}" method="post">
+                {{ cart_product_form }}
+                {% csrf_token %}
+                <input type="submit" value="Add to cart">
+            </form>
 
             <div class="product-detail__description-card">
                 <h3 class="product-detail__section-title">Description</h3>
