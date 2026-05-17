@@ -3,17 +3,38 @@
 
 {% block title %}{{ product.name }}{% endblock %}
 
-
 {% block content %}
-  <div class="product-detail">
-        <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'pdf/no_image.png' %}{% endif %}">
-        <h1>{{ product.name }}</h1>
-        <h2>
-            <a href="{{ product.category.get_absolute_url }}">
+<div class="product-page">
+    <div class="product-detail">
+        <div class="product-detail__gallery">
+            <div class="product-detail__image-card">
+                <img
+                    src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}"
+                    alt="{{ product.name }}"
+                    class="product-detail__image"
+                >
+            </div>
+        </div>
+
+        <div class="product-detail__content">
+            <a href="{{ product.category.get_absolute_url }}" class="product-detail__category">
                 {{ product.category }}
             </a>
-        </h2>
-        <span class="price">${{ product.price }}</span>
-        {{ product.description|linebreaks }}
-  </div>
+
+            <h1 class="product-detail__title">{{ product.name }}</h1>
+
+            <div class="product-detail__top">
+                <p class="product-detail__price">${{ product.price }}</p>
+            </div>
+            
+
+            <div class="product-detail__description-card">
+                <h3 class="product-detail__section-title">Description</h3>
+                <div class="product-detail__description">
+                    {{ product.description|linebreaks }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
