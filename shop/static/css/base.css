@@ -1,0 +1,169 @@
+.recommendations.cart {
+    width: 60%;
+    float: left;
+    overflow: auto;
+}
+
+.recommendations.cart h3 {
+    margin-top: 0;
+}
+
+.recommendations.cart .item {
+    margin-right: 12px;
+}
+
+.recommendations.cart img {
+    width: 120px;
+}
+
+/* ── Braintree ── */
+form div.field {
+    font-size: 14px;
+    color: #555;
+    width: 320px;
+    height: 22px;
+    margin-bottom: 14px;
+    padding: 6px 14px;
+    border: 1.5px solid #e5e5e5;
+    background: #fff;
+    border-radius: 6px;
+}
+
+/* ── Pagination ── */
+#pagination {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 48px;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    transition: 0.15s;
+    cursor: pointer;
+}
+
+.page-btn:hover {
+    background: #f0f0ee;
+    color: #111;
+    border-color: #ccc;
+}
+
+.page-btn.active {
+    background: #1a1a1a;
+    color: #fff;
+    border-color: #1a1a1a;
+}
+
+.page-btn.disabled {
+    color: #ccc;
+    border-color: #eee;
+    cursor: default;
+    pointer-events: none;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1400px) {
+    .product-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .product-detail {
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+    }
+
+    .product-detail__title {
+        font-size: 40px;
+    }
+
+    .product-detail__image-card {
+        min-height: 560px;
+    }
+}
+
+@media (max-width: 1100px) {
+    #content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #sidebar {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .product-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .product-detail {
+        grid-template-columns: 1fr;
+    }
+
+    .product-detail__title {
+        font-size: 34px;
+    }
+
+    .product-detail__image-card {
+        min-height: 420px;
+    }
+}
+
+@media (max-width: 768px) {
+    #header,
+    #subheader,
+    #content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #header .logo {
+        font-size: 20px;
+    }
+
+    #subheader .cart {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    #main h1 {
+        font-size: 22px;
+        margin-bottom: 16px;
+    }
+
+    .product-list {
+        grid-template-columns: 1fr;
+    }
+
+    .product-detail__title {
+        font-size: 28px;
+    }
+
+    .product-detail__price {
+        font-size: 26px;
+    }
+
+    .product-detail__description {
+        font-size: 16px;
+    }
+
+    .product-detail__image-card {
+        padding: 20px;
+        min-height: 320px;
+    }
+
+    .product-detail__description-card {
+        padding: 20px;
+    }
+}
